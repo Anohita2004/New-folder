@@ -1,0 +1,299 @@
+
+
+/* =================================
+   GLOBAL COLOUR VARIABLES
+================================= */
+
+
+/* =================================
+   ROOT COLOUR VARIABLES
+================================= */
+
+:root {
+    --primary-brown: #350c02;
+    --secondary-brown: #521b05;
+    --cream: #f5f2f1;
+    --accent-gold: #d4a373;
+    --white: #ffffff;
+}
+
+
+/* =================================
+   MAIN HEADER / HERO SECTION
+================================= */
+
+#header {
+    background-color: var(--secondary-brown);
+
+    padding: 20px;
+    margin-bottom: 25px;
+    height: 600px;
+    width: 100%;
+
+    border-radius: 20px;
+    border: 2px solid rgb(141, 37, 37);
+
+    position: relative;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* =================================
+   FIRST BACKGROUND IMAGE
+================================= */
+
+#header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url("C:\\Users\\Admin\\Downloads\\New folder\\Cafe Shop Design Ideas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: fadeFirst 10s infinite ease-in-out;
+}
+
+
+/* =================================
+   SECOND BACKGROUND IMAGE
+================================= */
+
+#header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url("C:\\Users\\Admin\\Downloads\\New folder\\download (6).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+
+    animation: fadeSecond 10s infinite ease-in-out;
+}
+
+
+/* =================================
+   CROSSFADE ANIMATIONS
+================================= */
+
+@keyframes fadeFirst {
+    0%, 40% {
+        opacity: 1;
+    }
+
+    50%, 90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeSecond {
+    0%, 40% {
+        opacity: 0;
+    }
+
+    50%, 90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   NAVIGATION PANE
+================================= */
+
+#sub-header-pane {
+    background-color: transparent;
+
+    padding: 20px;
+    height: 50px;
+    width: 100%;
+
+    border-radius: 10px;
+    border: 2px solid rgb(243, 239, 239);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* =================================
+   NAVIGATION BUTTONS
+================================= */
+
+#homebuttons,
+#aboutbuttons,
+#contactbuttons,
+#productbuttons,
+#brewingMethodsButton,
+#eventsWorkshopsButton {
+    background-color: transparent;
+    color: var(--white);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    padding: 8px 18px;
+
+    border-radius: 40px;
+    border: 1px solid var(--white);
+
+    cursor: pointer;
+    position: static;
+
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* Navigation Hover Effect */
+
+#homebuttons:hover,
+#aboutbuttons:hover,
+#contactbuttons:hover,
+#productbuttons:hover,
+#brewingMethodsButton:hover,
+#eventsWorkshopsButton:hover {
+    background-color: var(--white);
+    color: var(--primary-brown);
+
+    transform: translateY(-2px);
+}
+
+/* =================================
+   PRODUCT SHOWCASE CARD
+================================= */
+
+#sub-header-product {
+    background-color: rgba(53, 12, 2, 0.55);
+
+    padding: 20px;
+    height: 300px;
+    width: 450px;
+
+    border-radius: 20px;
+    border: 1px solid var(--white);
+
+    position: absolute;
+    left: 20px;
+    top: 270px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Product Text Container */
+
+#sub-header-product-text {
+    text-align: left;
+}
+
+/* Product Name */
+
+#productName {
+    color: var(--white);
+
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+}
+
+/* Product Description */
+
+#productDescription {
+    color: var(--cream);
+
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+
+    margin-top: 20px;
+    padding: 8px;
+
+    text-align: left;
+
+    background: rgba(53, 12, 2, 0.5);
+
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* =================================
+   PRODUCT BUTTON
+================================= */
+
+#productButton {
+    background-color: var(--primary-brown);
+    color: var(--white);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    padding: 10px 20px;
+
+    border-radius: 40px;
+    border: 2px solid var(--white);
+
+    cursor: pointer;
+
+    align-self: flex-end;
+    margin-top: 10px;
+
+    transition: all 0.3s ease;
+}
+
+/* Product Button Hover */
+
+#productButton:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-brown);
+    transform: translateY(-2px);
+}
+
+#main {
+    background-color: #521b05;
+    padding: 20px;
+    margin-bottom: 25px;
+    height: 170px;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px dashed rgb(141, 37, 37);
+}
+
+#footer {
+    background-color: #d47777;
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 100px;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px dashed rgb(141, 37, 37);
+}
