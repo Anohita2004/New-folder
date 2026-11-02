@@ -1,20 +1,22 @@
 
-/* =================================
-   ROOT VARIABLES
-================================= */
+/* =========================================
+   1. ROOT VARIABLES
+========================================= */
 
 :root {
     --primary-brown: #350c02;
     --secondary-brown: #521b05;
-    --cream: #f5f2f1;
+    --coffee-brown: #70452b;
+    --latte: #c9a783;
+    --cream: #e8d2b5;
     --accent-gold: #d4a373;
     --white: #ffffff;
 }
 
 
-/* =================================
-   GLOBAL STYLING
-================================= */
+/* =========================================
+   2. GLOBAL STYLING
+========================================= */
 
 * {
     margin: 0;
@@ -23,14 +25,50 @@
 }
 
 body {
-    background-color: var(--secondary-brown);
     font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background-color: var(--latte);
+
+    background-image:
+        radial-gradient(
+            ellipse at 15% 15%,
+            rgba(255, 245, 225, 0.9),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            ellipse at 85% 25%,
+            rgba(91, 45, 20, 0.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            ellipse at 20% 85%,
+            rgba(112, 63, 35, 0.2),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            ellipse at 90% 90%,
+            rgba(255, 238, 210, 0.7),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #e8d2b5,
+            #c9a783,
+            #ead8bd
+        );
+
+    background-attachment: fixed;
 }
 
 
-/* =================================
-   MENU CONTAINER
-================================= */
+/* =========================================
+   3. MENU CONTAINER
+========================================= */
 
 .menu-container {
     min-height: 100vh;
@@ -44,9 +82,9 @@ body {
 }
 
 
-/* =================================
-   MENU HEADING
-================================= */
+/* =========================================
+   4. MENU HEADING
+========================================= */
 
 .menu-heading {
     text-align: center;
@@ -54,23 +92,28 @@ body {
 }
 
 .menu-heading h1 {
-    color: var(--cream);
-    font-size: 36px;
-    letter-spacing: 5px;
+    color: #421b0b;
+
+    font-size: 38px;
+    letter-spacing: 6px;
     font-family: Georgia, serif;
+
+    text-shadow:
+        1px 2px 3px rgba(53, 12, 2, 0.15);
 }
 
 .menu-heading p {
-    color: var(--accent-gold);
+    color: var(--coffee-brown);
+
     font-size: 14px;
     margin-top: 10px;
     letter-spacing: 2px;
 }
 
 
-/* =================================
-   HIDE RADIO BUTTONS
-================================= */
+/* =========================================
+   5. HIDE RADIO BUTTONS
+========================================= */
 
 input[type="radio"] {
     position: absolute;
@@ -79,9 +122,9 @@ input[type="radio"] {
 }
 
 
-/* =================================
-   BOOK STRUCTURE
-================================= */
+/* =========================================
+   6. BOOK STRUCTURE
+========================================= */
 
 .book {
     position: relative;
@@ -94,13 +137,19 @@ input[type="radio"] {
 
     margin: 10px auto;
 
-    filter: drop-shadow(12px 15px 15px rgba(0,0,0,0.4));
+    filter:
+        drop-shadow(
+            8px 12px 10px rgba(53, 12, 2, 0.25)
+        )
+        drop-shadow(
+            2px 4px 5px rgba(53, 12, 2, 0.15)
+        );
 }
 
 
-/* =================================
-   INDIVIDUAL PAGES
-================================= */
+/* =========================================
+   7. INDIVIDUAL PAGES
+========================================= */
 
 .page {
     position: absolute;
@@ -113,29 +162,29 @@ input[type="radio"] {
     transform-style: preserve-3d;
 
     transition:
-        transform 1.1s cubic-bezier(0.645, 0.045, 0.355, 1),
-        box-shadow 1.1s ease;
-
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+        transform 1.1s cubic-bezier(
+            0.645, 0.045, 0.355, 1
+        );
 
     border-radius: 5px;
     overflow: hidden;
 
     background-color: var(--cream);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 
-/* =================================
-   PAGE IMAGES
-================================= */
+/* =========================================
+   8. PAGE IMAGES
+========================================= */
 
 .page img {
     width: 100%;
     height: 100%;
 
     display: block;
-
     object-fit: cover;
 
     backface-visibility: hidden;
@@ -143,9 +192,9 @@ input[type="radio"] {
 }
 
 
-/* =================================
-   PAGE STACKING ORDER
-================================= */
+/* =========================================
+   9. INITIAL PAGE STACKING
+========================================= */
 
 .page-1 { z-index: 6; }
 .page-2 { z-index: 5; }
@@ -155,11 +204,9 @@ input[type="radio"] {
 .page-6 { z-index: 1; }
 
 
-/* =================================
-   PAGE TURNING ANIMATIONS
-================================= */
-
-/* When page 2 is selected */
+/* =========================================
+   10. PAGE 2 SELECTED
+========================================= */
 
 #page-2:checked ~ .book .page-1 {
     transform: rotateY(-180deg);
@@ -171,27 +218,23 @@ input[type="radio"] {
 }
 
 
-/* When page 3 is selected */
+/* =========================================
+   11. PAGE 3 SELECTED
+========================================= */
 
 #page-3:checked ~ .book .page-1,
 #page-3:checked ~ .book .page-2 {
     transform: rotateY(-180deg);
 }
 
-#page-3:checked ~ .book .page-1 {
-    z-index: 1;
-}
-
-#page-3:checked ~ .book .page-2 {
-    z-index: 2;
-}
-
-#page-3:checked ~ .book .page-3 {
-    z-index: 10;
-}
+#page-3:checked ~ .book .page-1 { z-index: 1; }
+#page-3:checked ~ .book .page-2 { z-index: 2; }
+#page-3:checked ~ .book .page-3 { z-index: 10; }
 
 
-/* When page 4 is selected */
+/* =========================================
+   12. PAGE 4 SELECTED
+========================================= */
 
 #page-4:checked ~ .book .page-1,
 #page-4:checked ~ .book .page-2,
@@ -205,7 +248,9 @@ input[type="radio"] {
 #page-4:checked ~ .book .page-4 { z-index: 10; }
 
 
-/* When page 5 is selected */
+/* =========================================
+   13. PAGE 5 SELECTED
+========================================= */
 
 #page-5:checked ~ .book .page-1,
 #page-5:checked ~ .book .page-2,
@@ -221,7 +266,9 @@ input[type="radio"] {
 #page-5:checked ~ .book .page-5 { z-index: 10; }
 
 
-/* When page 6 is selected */
+/* =========================================
+   14. PAGE 6 SELECTED
+========================================= */
 
 #page-6:checked ~ .book .page-1,
 #page-6:checked ~ .book .page-2,
@@ -239,21 +286,21 @@ input[type="radio"] {
 #page-6:checked ~ .book .page-6 { z-index: 10; }
 
 
-/* =================================
-   PAGE NAVIGATION ARROWS
-================================= */
+/* =========================================
+   15. PAGE NAVIGATION ARROWS
+========================================= */
 
 .next-arrow,
 .previous-arrow,
 .restart-arrow {
     position: absolute;
-
     bottom: 15px;
 
     width: 42px;
     height: 42px;
 
     border-radius: 50%;
+    border: 2px solid var(--accent-gold);
 
     display: flex;
     align-items: center;
@@ -265,16 +312,14 @@ input[type="radio"] {
     font-size: 22px;
     font-weight: bold;
 
-    border: 2px solid var(--accent-gold);
-
     cursor: pointer;
-
     transition: all 0.3s ease;
 
     z-index: 5;
 }
 
-.next-arrow {
+.next-arrow,
+.restart-arrow {
     right: 15px;
 }
 
@@ -282,9 +327,8 @@ input[type="radio"] {
     left: 15px;
 }
 
-.restart-arrow {
-    right: 15px;
-}
+
+/* ARROW HOVER EFFECT */
 
 .next-arrow:hover,
 .previous-arrow:hover,
@@ -296,48 +340,50 @@ input[type="radio"] {
 }
 
 
-/* =================================
-   INSTRUCTIONS
-================================= */
+/* =========================================
+   16. PAGE INSTRUCTIONS
+========================================= */
 
 .page-instruction {
-    color: var(--cream);
-    font-size: 13px;
+    color: #421b0b;
 
+    font-size: 13px;
     letter-spacing: 1px;
+
     margin-top: 25px;
     text-align: center;
 }
 
 
-/* =================================
-   BACK TO HOME
-================================= */
+/* =========================================
+   17. BACK TO HOME LINK
+========================================= */
 
 .back-home {
-    text-decoration: none;
+    color: var(--primary-brown);
 
-    color: var(--accent-gold);
+    font-size: 14px;
+    text-decoration: none;
 
     margin-top: 20px;
 
-    font-size: 14px;
     transition: color 0.3s ease;
 }
 
 .back-home:hover {
-    color: var(--white);
+    color: var(--coffee-brown);
 }
 
 
-/* =================================
-   RESPONSIVE DESIGN
-================================= */
+/* =========================================
+   18. RESPONSIVE DESIGN
+========================================= */
 
 @media (max-width: 500px) {
 
     .menu-heading h1 {
         font-size: 27px;
+        letter-spacing: 4px;
     }
 
     .book {
@@ -351,24 +397,19 @@ input[type="radio"] {
         height: 36px;
         font-size: 18px;
     }
-
 }
 
 
-/* =================================
-   REDUCED MOTION ACCESSIBILITY
-================================= */
+/* =========================================
+   19. REDUCED MOTION ACCESSIBILITY
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .page {
-        transition: none;
-    }
-
+    .page,
     .next-arrow,
     .previous-arrow,
     .restart-arrow {
         transition: none;
     }
-
 }
