@@ -1,105 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Grindhouse Cafe</title>
-
-    <link rel="stylesheet" href="C:\Users\Admin\Downloads\New folder\css\index.css">
+    <meta name="description" content="Cafe Florista is a flower-filled cafe in Kolkata's Park Street area. Explore the cafe, menu, and visit details.">
+    <meta name="theme-color" content="#fbf4ee">
+    <title>Cafe Florista | Flowers, flavour & a little pause</title>
+    <link rel="stylesheet" href="css/design.css">
 </head>
-
 <body>
-
-    <!-- HEADER / HERO SECTION -->
-
-    <div id="header">
-
-        <!-- NAVIGATION BAR -->
-
-        <div id="sub-header-pane">
-
-            <a href="menu.html" id="homebuttons">Menu</a>
-
-            <a href="#about" id="aboutbuttons">About us</a>
-
-            <a href="#coffees" id="productbuttons">Our coffees</a>
-
-            <a href="#brewing" id="brewingMethodsButton">
-                Brewing Methods
-            </a>
-
-            <a href="#events" id="eventsWorkshopsButton">
-                Events and Workshops
-            </a>
-
-            <a href="#contact" id="contactbuttons">Contact us</a>
-
-        </div>
-
-
-        <!-- PRODUCT / HERO CARD -->
-
-        <div id="sub-header-product">
-
-            <div id="sub-header-product-text">
-
-                <p id="productName">
-                    Welcome to
-                    Grindhouse Cafe
-                </p>
-
-                <button id="productButton">
-                    Order Now
-                </button>
-
-            </div>
-
-            <div id="productDescription">
-                Over 100+ customers
-                <br>
-                All over the whole world
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- MAIN CONTENT -->
-
-    <div id="main">
-
-        <section id="about">
-            <h2>About Us</h2>
-        </section>
-
-        <section id="coffees">
-            <h2>Our Coffees</h2>
-        </section>
-
-        <section id="brewing">
-            <h2>Brewing Methods</h2>
-        </section>
-
-        <section id="events">
-            <h2>Events and Workshops</h2>
-        </section>
-
-    </div>
-
-
-    <!-- FOOTER -->
-
-    <div id="footer">
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-        </section>
-
-    </div>
-
+    <header class="hero" id="top">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="brand" href="#top">Cafe <em>Florista</em></a>
+            <div class="nav-links"><a href="#cafe">Our cafe</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#find">Find us</a></div>
+            <a class="nav-cta" href="https://www.zomato.com/kolkata/cafe-florista-1-park-street-area/order" target="_blank" rel="noopener noreferrer">Order on Zomato <span aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="hero-content"><p class="eyebrow">Flowers, flavour & a little pause</p><h1>Find your little corner <em>in bloom.</em></h1><p class="hero-copy">Step into a bright, flower-filled cafe in Kolkata’s Park Street area. Find a table, take in the blooms, and make a moment of it.</p><div class="hero-actions"><a class="button button-primary" href="#menu">Explore the menu <span aria-hidden="true">→</span></a><a class="button button-quiet" href="#find">Plan your visit <span aria-hidden="true">↓</span></a></div></div>
+        <div class="hero-note"><span>CAFE FLORISTA</span><span>PARK STREET · KOLKATA</span></div>
+    </header>
+    <main>
+        <div class="ticker" aria-label="Flowers, flavour, a little pause, Park Street, Kolkata"><span>Flowers</span><i>✿</i><span>Flavour</span><i>✿</i><span>A little pause</span><i>✿</i><span>Park Street, Kolkata</span></div>
+        <section class="cafe-section section" id="cafe"><div class="cafe-copy"><p class="eyebrow">Our cafe</p><h2>A pause,<br><em>in full colour.</em></h2><p>Pink walls, flower-covered ceilings, and cosy corners make Cafe Florista a place to slow down and stay awhile. Come by for a coffee, a meal, or a sweet treat.</p></div><div class="experience-grid"><article class="experience-card"><span class="card-number">01</span><h3>Walls of blooms</h3><p>A flower-filled setting, made to brighten an ordinary day.</p></article><article class="experience-card experience-card-dark"><span class="card-number">02</span><h3>Made to linger</h3><p>Gather your favourite people and make a little time for yourself.</p></article></div></section>
+        <section class="menu-section section" id="menu"><p class="eyebrow">The menu</p><h2>Something to <em>savour.</em></h2><div class="menu-cards"><article class="menu-card"><p class="menu-label">SIP</p><h3>Drinks</h3><p>Coffee, shakes, and something refreshing.</p><a href="menu.html">Explore the menu <span aria-hidden="true">→</span></a></article><article class="menu-card"><p class="menu-label">SAVOUR</p><h3>Bites</h3><p>Sandwiches, momos, pizza, pasta, and more.</p><a href="menu.html">Explore the menu <span aria-hidden="true">→</span></a></article><article class="menu-card"><p class="menu-label">TREAT</p><h3>Sweet things</h3><p>Finish your cafe moment with something sweet.</p><a href="menu.html">Explore the menu <span aria-hidden="true">→</span></a></article></div><p class="menu-footnote">For current items, prices, and availability, see the live menu on Zomato.</p></section>
+        <section class="gallery-section section" id="gallery"><p class="eyebrow">Gallery</p><h2>Take in the <em>blooms.</em></h2><div class="gallery-grid"><figure class="gallery-large"><img src="assets/menu/cafe_florista1.jpg" alt="Flower-covered ceiling and pink seating at Cafe Florista" loading="lazy"></figure><figure><img src="assets/menu/cafe_florista3.jpg" alt="Pink booth seating inside Cafe Florista" loading="lazy"></figure><figure><img src="assets/menu/cafe_florista5.jpg" alt="Cafe Florista tables and decorative mirrors" loading="lazy"></figure><figure><img src="assets/menu/cafe_florista6.jpg" alt="Cafe Florista sign set into a wall of flowers" loading="lazy"></figure><figure><img src="assets/menu/cafe_florista7.jpg" alt="Illuminated Cafe Florista flower wall" loading="lazy"></figure></div></section>
+        <section class="find-section section" id="find"><div class="find-card"><p class="eyebrow">Find us</p><h2>Plan your <em>visit.</em></h2><p class="address">4, Royd Street Area,<br>opposite Royd Nursing Home,<br>Park Street Area, Kolkata</p><p class="hours-note">Check today’s opening hours on Zomato.</p><div class="find-actions"><a class="button button-primary" href="https://www.zomato.com/kolkata/cafe-florista-1-park-street-area/order" target="_blank" rel="noopener noreferrer">Order on Zomato <span aria-hidden="true">↗</span></a><a class="button button-outline" href="https://www.google.com/maps/dir/?api=1&amp;destination=22.5528594000%2C88.3543744000" target="_blank" rel="noopener noreferrer">Get directions</a></div><a class="phone-link" href="tel:+919831195894">Call Cafe Florista · +91 98311 95894</a></div><div class="map-frame"><iframe title="Map to Cafe Florista in Park Street, Kolkata" src="https://www.google.com/maps?q=22.5528594,88.3543744&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></section>
+    </main>
+    <footer class="site-footer"><a class="brand" href="#top">Cafe <em>Florista</em></a><span>Flowers, flavour & a little pause</span><div><a href="menu.html">Menu</a><a href="https://www.zomato.com/kolkata/cafe-florista-1-park-street-area" target="_blank" rel="noopener noreferrer">Zomato ↗</a><a href="tel:+919831195894">Call ↗</a></div><small>Hours, menu, and listing details can change. Check Zomato for the latest information.</small></footer>
 </body>
 </html>
